@@ -1,0 +1,114 @@
+*, *::before, *::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Amatic SC", cursive;
+  font-size: 16px;
+}
+
+.scene {
+  width: 100%;
+  height: 100vh;
+  background-color: #ffda33;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.scene > div {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.scene > div > h1 {
+  font-size: 5.5rem;
+}
+.scene > div > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.scene > div > div > h3 {
+  font-size: 4rem;
+}
+.scene > div > div > h3 span {
+  font-size: 3rem;
+  background-color: rgba(255, 255, 255, 0.329);
+  padding: 0.5rem 1.5rem;
+}
+.scene > div > div button {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  font-size: 3.5rem;
+  margin-left: 3rem;
+  font-family: "Amatic SC", cursive;
+  cursor: pointer;
+  transition: 0.4s;
+}
+.scene > div > div button:hover {
+  transform: rotate(360deg);
+}
+
+.ground {
+  display: grid;
+  grid-template-columns: repeat(3, 250px);
+  grid-template-rows: auto;
+  grid-row-gap: 3rem;
+  grid-column-gap: 2rem;
+  margin-top: 4rem;
+}
+.ground > .whole {
+  position: relative;
+  width: 250px;
+  height: 150px;
+}
+.ground > .whole > .hole {
+  width: 100%;
+  height: 50%;
+  background-image: url("../img/hole.png");
+  background-size: cover;
+  background-position: 50% 50%;
+  position: absolute;
+  top: 40px;
+  left: 0;
+  z-index: 2;
+}
+.ground > .whole > .mole {
+  width: 200px;
+  height: 100px;
+  background-image: url("../img/mole.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 0;
+  left: calc(50% - 100px);
+  z-index: 1;
+  transform: translateY(20px);
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.4s;
+}
+
+.whole.up > .mole {
+  opacity: 1;
+  transform: translateY(-45px);
+  visibility: visible;
+}
+
+#bonk {
+  width: 100px;
+  height: 100px;
+  position: fixed;
+  background-image: url("../img/bonk.png");
+  background-size: cover;
+  z-index: 999;
+  top: -100%;
+  left: -100%;
+}/*# sourceMappingURL=style.css.map */
